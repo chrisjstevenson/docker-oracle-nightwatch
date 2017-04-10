@@ -5,10 +5,10 @@
   </head>
   <body>
 
-  	<% customers.forEach(function(cust) {     %>
-
-    	<p><%= cust[0] %></p>
-
+  	<% customers.forEach(function(c) { %>
+  	   <div>
+    	<a href="/customer/<%= c.id %>"><%= c.name %></a>
+       <div>
     <% }); %>
   </body>
 </html>

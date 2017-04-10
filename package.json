@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "ui-specs": "gulp ui-tests"
   },
   "dependencies": {
     "bluebird": "^3.5.0",
@@ -17,5 +18,16 @@
     "oracledb": "^1.13.0",
     "serve-favicon": "~2.3.2",
     "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "expect": "^1.20.2",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^4.3.0",
+    "gulp-nightwatch": "^0.3.2",
+    "mocha": "^3.2.0",
+    "nightwatch": "^0.9.14",
+    "portfinder": "^1.0.13",
+    "selenium-download": "^2.0.9"
   }
 }
