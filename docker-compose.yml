@@ -1,0 +1,29 @@
+version: '2'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: npm start
+    stdin_open: true
+    environment:
+      NODE_ENV:
+    ports:
+      - 8000:8000
+    networks:
+      - app-bridge
+  db:
+    build:
+      context: .
+      dockerfile: OracleDockerfile
+    networks:
+      - app-bridge
+  selenium:
+    image: selenium/standalone-chrome
+    ports:
+      - 4444:4444
+    networks:
+      - app-bridge
+networks:
+  app-bridge:
+    driver: bridge%
