@@ -12,7 +12,7 @@ module.exports = {
     },
     "test_settings": {
         "default": {
-            "launch_url" : "http://localhost:3000",
+            "launch_url" : "http://localhost:8000",
             "screenshots": {
                 "enabled": false,
                 "path": ""
@@ -32,4 +32,4 @@ module.exports = {
         }
     },
     "test_runner": "mocha"
-}
+};

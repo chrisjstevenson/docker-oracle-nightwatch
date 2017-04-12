@@ -25,7 +25,7 @@ queryService.executeQuery = function (sqlStatement) {
 
             return queryPromise.then(result => {
                 if (result) {
-                    log.debug(result.rows);
+                    //log.debug(result.rows);
                 }
                 return result.rows;
             }).catch(err => {
