@@ -1,6 +1,6 @@
 {
-  "name": "nodejs-starter",
-  "version": "0.0.0",
+  "name": "docker-oracle-nightwatch",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node app.js",

@@ -15,7 +15,12 @@ services:
   db:
     build:
       context: .
-      dockerfile: OracleDockerfile
+      dockerfile: ./db/Dockerfile
+    environment:
+      ORACLE_ALLOW_REMOTE:
+    ports:
+      - "49160:22"
+      - "49161:1521"
     networks:
       - app-bridge
   selenium:
@@ -26,4 +31,4 @@ services:
       - app-bridge
 networks:
   app-bridge:
-    driver: bridge%
+    driver: bridge
