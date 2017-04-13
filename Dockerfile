@@ -1,4 +1,18 @@
-FROM node:1
+FROM node:6.9.1
+
+# Install oracle client driver
+ENV LD_LIBRARY_PATH=/opt/oracle/instantclient
+ENV TNS_ADMIN=/opt/oracle/tnsnames
+
+RUN mkdir -p /usr/src/lib
+WORKDIR /usr/src
+
+COPY lib /usr/src/lib
+
+# Install oracle via shell script
+RUN chmod -R 600 ./lib && \
+
+. ./lib/oracle/linux/install-client.sh
 
 # For corp firewalled networks
 RUN npm config set strict-ssl false
