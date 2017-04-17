@@ -2,6 +2,9 @@
 Sample configuration on how to use oracle-xe-11g and docker to create short-run testing configurations. I'm using
 selenium, nightwatch, and mocha for end-to-end testing.
 
+#### Prerequisites
+Follow the installation directions for oracledb and the oracle client drivers. 
+
 #### Running the tests
 
 To run locally without using compose

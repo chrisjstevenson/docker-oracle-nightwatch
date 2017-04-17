@@ -4,4 +4,4 @@ config.js
 .DS_Store
 npm-debug.log
 server/config.js
-/lib/oracle/tnsnames/
+/lib/oracle
