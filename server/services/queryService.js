@@ -12,7 +12,6 @@
 */
 
 const queryService = module.exports;
-const config = require('../config');
 let oracledb = require('oracledb');
 
 queryService.executeQuery = function (sqlStatement) {

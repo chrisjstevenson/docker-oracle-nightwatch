@@ -30,7 +30,7 @@ module.exports = {
             }
         },
         "local": {
-            "launch_url" : "http://localhost:8000",  // why is this always port 8000? also if provided selenium_host and selenium_port this fails
+            "launch_url" : "http://localhost:8000",
             "screenshots": {
                 "enabled": false,
                 "path": ""

@@ -14,4 +14,4 @@ module.exports = global.log = new winston.Logger({
             prettyPrint: true
         })
     ]
-})
+});

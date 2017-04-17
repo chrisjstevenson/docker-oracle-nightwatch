@@ -1,10 +1,9 @@
-global.log = require('./log');
+global.log = require('./config/log');
+global.config = require('./config/config');
 global.Promise = require('bluebird');
 
 const app = Promise.promisifyAll(require('./express'));
 const db = require('./services/queryService');
-const config = require('./config');
-
 
 module.exports.run = function (cb) {
     log.info("server - Starting");
