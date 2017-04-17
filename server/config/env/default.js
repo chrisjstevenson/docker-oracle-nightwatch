@@ -9,6 +9,6 @@ module.exports = {
     database: {
         dbUserName: 'foo',
         dbPassword: 'Shae8yid',
-        connectionString: 'db/XE'  // oracle-db container, not localhost!
+        connectionString: '127.0.0.1:49161/XE'
     }
 };

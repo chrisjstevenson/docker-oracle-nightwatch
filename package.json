@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "ui-specs": "gulp ui-tests"
+    "e2e": "gulp ui-tests",
+    "e2e-docker": "gulp ui-tests-docker"
   },
   "dependencies": {
     "bluebird": "^3.5.0",

@@ -12,9 +12,6 @@ gulp.task('find-open-port', function (cb) {
         testingPort = port;
         config.url = `http://localhost:${testingPort}`;
         config.express.port = testingPort;
-
-        hostedAddress = 'http://' + os.hostname() + '.na.bestbuy.com:' + testingPort;
-
         cb();
     });
 });
@@ -29,7 +26,7 @@ gulp.task('selenium-download', function (cb) {
     });
 });
 
-gulp.task('ui-tests', ['selenium-download'], function (cb) {
+gulp.task('ui-tests', ['selenium-download', 'server'], function (cb) {
 
     gulp.src('e2e')
         .pipe(nightwatch({
@@ -41,12 +38,10 @@ gulp.task('ui-tests', ['selenium-download'], function (cb) {
         });
 });
 
-gulp.task('ui-specs-server', ['selenium-download', 'server'], function (cb) {
+gulp.task('ui-tests-docker', ['selenium-download'], function (cb) {
 
     const cliArgs = [];
-    if (process.env.NODE_ENV === 'integration') {
-        cliArgs.push('--env integration');
-    }
+    cliArgs.push('--env docker');
 
     gulp.src('e2e')
         .pipe(nightwatch({
