@@ -12,13 +12,31 @@ module.exports = {
     },
     "test_settings": {
         "default": {
-            "launch_url" : "http://localhost:8000",
+            "selenium": {
+                "start_process": false,
+            },
+            "selenium_host": "selenium",
+            "selenium_port": 4444,
+            "launch_url" : "http://app:8000",
             "screenshots": {
                 "enabled": false,
                 "path": ""
             },
             "globals": {
-                "waitForConditionTimeout": 5000
+                "waitForConditionTimeout": 10000
+            },
+            "desiredCapabilities": {
+                "browserName": "chrome"
+            }
+        },
+        "local": {
+            "launch_url" : "http://localhost:8000",  // why is this always port 8000? also if provided selenium_host and selenium_port this fails
+            "screenshots": {
+                "enabled": false,
+                "path": ""
+            },
+            "globals": {
+                "waitForConditionTimeout": 10000
             },
             "desiredCapabilities": {
                 "browserName": "chrome"
@@ -29,7 +47,7 @@ module.exports = {
                 "browserName": "chrome",
                 "javascriptEnabled": true
             }
-        }
+        },
     },
     "test_runner": "mocha"
 };

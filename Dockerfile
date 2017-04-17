@@ -1,6 +1,6 @@
 FROM node:6.9.1
 
-# Install oracle client driver
+## Install oracle client driver
 ENV LD_LIBRARY_PATH=/opt/oracle/instantclient
 ENV TNS_ADMIN=/opt/oracle/tnsnames
 

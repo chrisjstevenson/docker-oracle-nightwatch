@@ -19,10 +19,9 @@ unzip -o $source/'*.zip' -d $temp_dir
 mkdir -p $dest_dir
 
 
-#set shared librabry environment variable. this is the default directory that npm install oracleDB will look for in linux.
+#set shared library environment variable. this is the default directory that npm install oracleDB will look for in linux.
 cp -R ./lib/oracle/linux/instantclient_12_1/* $dest_dir
 #mv -fv ./lib/oracle/linux/instantclient /opt/oracle/instantclient
-cp -R ./lib/oracle/tnsnames /opt/oracle/tnsnames
 cd /opt/oracle/instantclient
 
 ln -sfv libclntsh.so.12.1 libclntsh.so

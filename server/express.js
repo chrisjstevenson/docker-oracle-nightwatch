@@ -11,9 +11,10 @@ app.use(bodyParser.json());
 
 require('./routes')(app);
 
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   log.error(err.stack);
-  res.status(500).send(err);
+  res.status(500);
+  res.render('error', { error: err });
 });
 
 module.exports = app;
