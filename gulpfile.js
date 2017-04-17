@@ -29,11 +29,29 @@ gulp.task('selenium-download', function (cb) {
     });
 });
 
-gulp.task('ui-tests', ['selenium-download', 'server'], function (cb) {
+gulp.task('ui-tests', ['selenium-download'], function (cb) {
 
     gulp.src('e2e')
         .pipe(nightwatch({
             configFile: 'e2e/nightwatch.conf.js'
+        }))
+        .on('end', err => {
+            process.exit(err ? 1 : 0);
+            cb(err);
+        });
+});
+
+gulp.task('ui-specs-server', ['selenium-download', 'server'], function (cb) {
+
+    const cliArgs = [];
+    if (process.env.NODE_ENV === 'integration') {
+        cliArgs.push('--env integration');
+    }
+
+    gulp.src('e2e')
+        .pipe(nightwatch({
+            configFile: 'e2e/nightwatch.conf.js',
+            cliArgs: cliArgs
         }))
         .on('end', err => {
             process.exit(err ? 1 : 0);

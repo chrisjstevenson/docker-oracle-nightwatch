@@ -6,7 +6,7 @@ const app = Promise.promisifyAll(require('./express'));
 const db = require('./services/queryService');
 
 module.exports.run = function (cb) {
-    log.info("server - Starting");
+    log.info(`server - Starting ${config.environment}`);
 
     return db.init().then((pool, err) => {
             if (pool) {

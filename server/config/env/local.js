@@ -1,5 +1,7 @@
 module.exports = {
 
+    environment: 'local',
+
     express: {
         port: 8001
     },
@@ -7,6 +9,6 @@ module.exports = {
     database: {
         dbUserName: 'foo',
         dbPassword: 'Shae8yid',
-        connectionString: 'localhost:49161/XE'
+        connectionString: '127.0.0.1:49161/XE'
     }
 };

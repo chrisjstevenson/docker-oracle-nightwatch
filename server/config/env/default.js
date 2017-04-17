@@ -1,5 +1,7 @@
 module.exports = {
 
+    environment: 'default',
+
     express: {
         port: 8000
     },
