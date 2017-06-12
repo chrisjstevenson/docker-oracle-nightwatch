@@ -31,17 +31,19 @@ To run with just the oracle-xe-11g container, first build it:
 ```
 docker build -t oracle-xe-11g:latest -f db/Dockerfile .
 ```
-The image build uses a set of initialization scripts to auto-populate credentials
-and a couple of basic tables. When completed you will see the following from the
-container logs:
-```
-SQL> Disconnected from Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
-```
 
 To run the container, the app, and tests do the following:
 ```
 docker run -d -p 49160:22 -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true oracle-xe-11g:latest
-
+```
+The image uses a set of initialization scripts to auto-populate credentials
+and a couple of basic tables. When ready you will see the following from the
+container logs:
+```
+SQL> Disconnected from Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+```
+You can then work with the app, run tests, etc. 
+```
 npm start
 
 npm run e2e
@@ -50,7 +52,7 @@ docker rm -f oracle-xe-11g
 ```
 
 Additionally you can use using docker-compose, and have the app, db, and selenium
-all run as containers. 
+all run as containers.
 ```
 NODE_ENV=docker ORACLE_ALLOW_REMOTE=true docker-compose up -d
 
