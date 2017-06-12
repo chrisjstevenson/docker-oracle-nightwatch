@@ -32,7 +32,7 @@ To run with just the oracle-xe-11g container, first build it:
 docker build -t oracle-xe-11g:latest -f db/Dockerfile .
 ```
 
-To run the container, the app, and tests do the following:
+To run the oracle-xe-11g container:
 ```
 docker run -d -p 49160:22 -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true oracle-xe-11g:latest
 ```
@@ -42,7 +42,7 @@ container logs:
 ```
 SQL> Disconnected from Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
 ```
-You can then work with the app, run tests, etc. 
+You can then work with the app, run tests, etc. as you normally would:
 ```
 npm start
 
